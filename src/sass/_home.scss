@@ -1,0 +1,154 @@
+.home {
+  background: url("../assets/homepage.jpeg") no-repeat center center/cover;
+
+  &__socialMedia {
+    padding-top: 30px;
+
+  }
+
+  .socialMediaIcon {
+    color: $secondary-color;
+    font-size: calc(30px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(32px + 6 * ((100vw - 320px) / 680));
+  }
+
+  .info-text {
+    padding: 20px 20px 20px 0;
+    text-align: center;
+  }
+
+
+
+  .item {
+    // background-color: #f1f1f1;
+
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    color: $white;
+  }
+
+  h1 {
+    padding-top: 35px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    font-size: calc(35px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(35px + 1 * ((100vw - 320px) / 680));
+  }
+
+  h2 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(35px + 1 * ((100vw - 320px) / 680));
+  }
+
+  p {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+
+  img {
+    margin: 30px 90px;
+    max-width: 500px;
+    // animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+}
+
+.cardContainer {
+  margin: 120px;
+}
+
+@media screen and (max-width: 500px) {
+  .home {
+    img {
+      margin-left: 0 !important;
+      max-width: 300px;
+    }
+
+    .item {
+      max-width: 90vw;
+      padding-left: 20px;
+    }
+
+    h2 {
+      font-size: calc(16px + 1 * ((100vw - 320px) / 680));
+      line-height: calc(22px + 1 * ((100vw - 320px) / 680));
+    }
+
+    p {
+      margin-top: 0 !important;
+    }
+
+    img {
+      max-width: 90%;
+    }
+  }
+}
+
+//animation
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+// @keyframes slide {
+//   25% {
+//     background-image: url("../assets/aakash.jpg");
+//   }
+
+//   50% {
+//     background-image: url("../assets/computer.jpeg");
+//   }
+
+//   75% {
+//     background-image: url("../assets/photo.png");
+//   }
+
+//   100% {
+//     background-image: url("../assets/mainImg.png");
+//   }
+// }
+
+// ipad
+@media screen and (min-width: 550px) and (max-width: 768px) {
+  .home {
+    img {
+      margin-left: 0 !important;
+    }
+
+    .item {
+      padding-bottom: 35px;
+    }
+  }
+}
+
+// ipad pro
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .home {
+    img {
+      max-width: 100%;
+    }
+  }
+}

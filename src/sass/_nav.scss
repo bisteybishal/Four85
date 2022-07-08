@@ -1,0 +1,185 @@
+.navbar {
+    //max-width: 1920px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    color: $white;
+
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    min-width: 100vw;
+
+    &__brand-title {
+        font-weight: 400;
+        letter-spacing: 0;
+        padding-left: 20px;
+        font-size: calc(24px + 1 * ((100vw - 320px) / 680));
+        line-height: calc(40px + 6 * ((100vw - 320px) / 680));
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    &__links {
+        font-weight: 200;
+        font-size: calc(16px + 1 * ((100vw - 320px) / 680));
+        line-height: calc(40px + 6 * ((100vw - 320px) / 680));
+        text-align: left;
+        padding-right: 20px;
+    }
+
+    &__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        list-style: none;
+        display: block;
+        text-decoration: none;
+        color: $white;
+        // border: 2px solid $primary-black;
+        // border-radius: 20px;
+        padding: 0.2rem 25px;
+    }
+
+    &__link:hover {
+        // border: 2px solid $secondary-color;
+        // border-radius: 20px;
+    }
+
+    .linkActive {
+        border: 2px solid $secondary-color;
+        border-radius: 20px;
+    }
+
+    &__current {
+        border-bottom: 4px solid grey;
+    }
+
+    .toggler {
+        position: absolute;
+        top: 0.2rem;
+        right: 1.5rem;
+        z-index: 2;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+
+    .hamburger {
+        position: absolute;
+        //top: .2rem;
+        //right: 1.5rem;
+        right: 1.5rem;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 0.5rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .hamburger > div {
+        position: relative;
+        flex: none;
+        width: 100%;
+        height: 2px;
+        background: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    /* Hamburger Lines - Top & Bottom */
+    .hamburger > div:before,
+    .hamburger > div:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+
+    /* Moves Line Down */
+    .hamburger > div::after {
+        top: 10px;
+    }
+    input[type="checkbox"]:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+
+    /* Turns Lines Into X */
+    .toggler:checked + .hamburger > div:before,
+    .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .toggler:checked ~ .navbar__links {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+
+        .hamburger {
+            display: flex;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        &__brand-title {
+            font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+            line-height: calc(22px + 6 * ((100vw - 320px) / 680));
+            padding-bottom: 20px;
+            padding-top: 20px;
+            img {
+                max-width: 90%;
+            }
+        }
+
+        &__links {
+            display: none;
+            width: 100%;
+            font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+            line-height: calc(32px + 6 * ((100vw - 320px) / 680));
+        }
+
+        &__list {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__link {
+            text-align: left;
+            padding: 20px;
+            border-top: 2px solid $primary-grey !important;
+            border-radius: unset;
+        }
+
+        .linkActive {
+            border: unset;
+            border-top: 2px solid $primary-grey !important;
+            border-radius: unset !important;
+        }
+
+        &__link:hover {
+            border: unset;
+            border-radius: unset;
+        }
+    }
+}

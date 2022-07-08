@@ -1,0 +1,93 @@
+.menu {
+  height: auto;
+  color: $secondary-black;
+  background: $primary-grey;
+  padding: 20px;
+
+  .title {
+    align-items: center;
+    font-weight: bolder;
+    color: grey;
+    font-size: calc(30px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(30px + 6 * ((100vw - 320px) / 680));
+  }
+
+  .topography {
+    color: $secondary-black;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1;
+    font-size: calc(20px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(40px + 6 * ((100vw - 320px) / 680));
+  }
+
+  .card {
+    background-color: #e6e6e6;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    margin: 10px;
+  }
+
+  .card:hover {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+
+
+  img {
+    margin: 50px 50px 50px 0;
+    padding-left: 40px;
+    max-width: 80%;
+  }
+
+  .info-text {
+    padding: 10px;
+    text-align: left;
+
+  }
+
+  h1 {
+    margin: 10px;
+    color: $secondary-black;
+    font-weight: bolder;
+    font-size: calc(35px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(15px + 1 * ((100vw - 320px) / 680));
+  }
+
+  h2 {
+    color: $navigation-grey;
+    font-weight: bolder;
+    font-size: calc(18px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+
+  p {
+    margin: 5px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: calc(15px + 1 * ((100vw - 320px) / 680));
+    line-height: calc(25px + 1 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .menu {
+    .container {
+      flex-direction: column;
+      align-content: space-between;
+      justify-items: center;
+      text-align: left;
+    }
+
+    .info-text {
+      text-align: left;
+
+    }
+
+    .img {
+      max-width: 200px !important;
+      margin-bottom: 20px;
+    }
+  }
+}
